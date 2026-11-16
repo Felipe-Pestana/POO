@@ -1,30 +1,40 @@
-﻿Pessoa p1 = new("Felipe",42,'M'); //Pessoa p = new Pessoa();
+﻿Carro CadastrarCarro()
+{
+    Console.WriteLine("Informe o Fabricante: ");
+    string fab = Console.ReadLine();
+    Console.WriteLine("Informe o Modelo: ");
+    string mod = Console.ReadLine();
+    Console.WriteLine("Informe o Ano de Fabricacao: ");
+    int anofab = int.Parse(Console.ReadLine());
+    Console.WriteLine("Informe o Ano do Modelo: ");
+    int anomod = int.Parse(Console.ReadLine());
+    Console.WriteLine("Informe o Valor de Venda: ");
+    double preco = double.Parse(Console.ReadLine());
 
-//Console.WriteLine("Informe seu nome: ");
-//p1.SetNome(Console.ReadLine());
+    Carro c = new();
 
-//Console.WriteLine(p1.GetNome());
+    c.setFabricante(fab);
+    c.setModelo(mod);
+    c.setAnoFabricacao(anofab);
+    c.setAnoModelo(anomod);
+    c.setValorVenda(preco);
 
+    return c;
+}
 
-//Pessoa p2 = new(); //Pessoa p = new Pessoa();
+Carro[] carros = new Carro[4];
 
+for(int i = 0;  i < carros.Length; i++)
+{
+    carros[i] = CadastrarCarro();
+}
 
-//Console.WriteLine(p1.Nome);
-//Console.WriteLine(p1.Idade);
-//Console.WriteLine(p1.Sexo);
+void MostrarCarros()
+{
+    for(int i = 0; i < carros.Length; i++)
+    {
+        Console.WriteLine(carros[i]);
+    }
+}
 
-Console.WriteLine(p1.ToString());
-Console.WriteLine(p1.GetType());
-
-
-Console.WriteLine(p1.Idade.ToString());
-
-var c = new Carro();
-c.Cor = "Vermelho";
-
-Console.WriteLine(c.ToString());
-
-
-
-
-Console.ReadKey();
+MostrarCarros();
