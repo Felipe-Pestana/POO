@@ -1,30 +1,25 @@
-﻿public class Pessoa
+﻿public abstract class Pessoa
 {
-    public string Nome;
-    public int Idade;
-    public char Sexo;
-    public string Endereço;
-    public Pessoa(string nome, int idade, char sexo)
-    {
-        Nome = nome;
-        Idade = idade;
-        Sexo = sexo;
-    }
+    public string Name { get; set; }
+    public string Address {  get; set; }
+    public DateOnly Date { get; set; }
+    public string Phone {  get; set; }
 
-    public void SetNome(string nome)
+    public Pessoa(string n)
     {
-        Nome = nome;
+        Name = n;
+        Date = DateOnly.FromDateTime(DateTime.Now);
     }
-
-    public string GetNome()
+    public Pessoa(string n, string p)
     {
-        return Nome;
+        Name = n;
+        Phone = p;
     }
 
     public override string ToString()
     {
-        return "Nome: " + Nome + "\nIdade: " + Idade + "\nSexo: " + Sexo + "Endereço: " + Endereço;
+        return $"Nome:{this.Name}\n" +
+            $"Data de Criacao: {this.Date}\n" +
+            $"Telefone: {this.Phone}";
     }
-
-
 }

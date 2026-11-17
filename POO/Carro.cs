@@ -5,6 +5,17 @@
     public int AnoFabricacao;
     public int AnoModelo;
     public double ValorVenda;
+    public Motor Motor;
+
+    //public Carro(string c, int p, int ci)
+    //{
+    //    Motor = new(c, p, ci);
+    //}
+
+    public Carro(Motor m)
+    {
+        Motor = m;
+    }
 
     public void setFabricante(string fabricante)
     {
